@@ -20,12 +20,18 @@ body {
     justify-content: center;
     width: 100%;
     bottom: 0;
-    background-color: grey;
+    background-color: #525252;
 }
 
 button {
     color: #fff;
+    font-size: 50px;
+    margin-inline: 10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.play-pause {
+  font-size: 60px;
 }
