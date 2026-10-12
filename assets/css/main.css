@@ -38,6 +38,7 @@ main {
 .controller {
     position: fixed;
     justify-content: center;
+    align-items: center;
     width: 100%;
     bottom: 0;
     background-color: #525252;
@@ -54,4 +55,10 @@ button {
 
 .play-pause {
   font-size: 60px;
+}
+
+.select {
+  position: absolute;
+  font-size: 20px;
+  left: 20px;
 }
