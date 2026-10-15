@@ -6,11 +6,11 @@ const next = document.querySelector('.forward');
 const selectSong = document.querySelector('.select')
 
 let currentSong = null;
-let songList = null;
+const songList = [];
 let songLength = 0;
 let songName = "";
 
-function getSongs() {
+async function getSongs() {
 
 }
 
@@ -21,10 +21,6 @@ function nextSong() {
 function prevSong() {
 
 }
-
-selectSong.addEventListener('click', () => {
-    getSongs();
-});
 
 prev.addEventListener('click', () => {
     prevSong();

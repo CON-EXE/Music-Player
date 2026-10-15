@@ -57,8 +57,16 @@ button {
   font-size: 60px;
 }
 
-.select {
+#select {
+  display: none;
+}
+
+#select-label {
   position: absolute;
   font-size: 20px;
   left: 20px;
+  background: none;
+  color: #fff;
+  cursor: pointer;
 }
+
