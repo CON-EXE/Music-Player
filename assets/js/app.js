@@ -3,7 +3,7 @@
 const playPause = document.querySelector('.play-pause');
 const prev = document.querySelector('.back');
 const next = document.querySelector('.forward');
-const selectSong = document.querySelector('.select')
+const selectSong = document.querySelector('select')
 
 let currentSong = null;
 const songList = [];
