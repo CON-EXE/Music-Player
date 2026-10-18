@@ -70,3 +70,16 @@ button {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 600px) {
+  button {
+    font-size: 30px;
+  }
+  
+  .play-pause {
+    font-size: 25px;
+  }
+  
+  #select-label {
+    font-size: 10px;
+  }
+}
