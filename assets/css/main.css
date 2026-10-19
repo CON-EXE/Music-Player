@@ -71,12 +71,17 @@ button {
 }
 
 @media only screen and (max-width: 600px) {
+  .song-name {
+    font-size: 20px;
+  }
+  
   button {
     font-size: 30px;
+    margin-inline: 5px;
   }
   
   .play-pause {
-    font-size: 25px;
+    font-size: 35px;
   }
   
   #select-label {
