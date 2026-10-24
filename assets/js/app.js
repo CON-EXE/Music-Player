@@ -1,6 +1,7 @@
 'use strict'
 
-const playPause = document.querySelector('.play-pause');
+const playPause = document.getElementById('play-pause-label');
+const checkbox = document.getElementById('play-pause');
 const prev = document.querySelector('.back');
 const next = document.querySelector('.forward');
 const selectSong = document.querySelector('select')
@@ -20,6 +21,14 @@ function nextSong() {
 
 function prevSong() {
 
+}
+
+playPause.onclick = function() {
+    if (checkbox.checked) {
+        playPause.innerHTML = '<i class="fa-solid fa-circle-pause"></i>';
+    } else {
+        playPause.innerHTML = '<i class="fa-solid fa-circle-play"></i>';
+    }
 }
 
 prev.addEventListener('click', () => {

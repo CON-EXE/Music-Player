@@ -53,8 +53,13 @@ button {
     cursor: pointer;
 }
 
-.play-pause {
+#play-pause {
+  display: none
+}
+
+#play-pause-label {
   font-size: 60px;
+  cursor: pointer;
 }
 
 #select {
@@ -80,7 +85,7 @@ button {
     margin-inline: 5px;
   }
   
-  .play-pause {
+  #play-pause {
     font-size: 35px;
   }
   
