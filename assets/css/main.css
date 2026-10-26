@@ -35,13 +35,15 @@ main {
   place-items: center;
 }
 
-.controller {
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    bottom: 0;
-    background-color: #525252;
+.controller-container {
+  width: 100%;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  background-color: #525252;
+  padding-inline: 25px;
 }
 
 button {
@@ -67,12 +69,14 @@ button {
 }
 
 #select-label {
-  position: absolute;
   font-size: 20px;
-  left: 20px;
   background: none;
   color: #fff;
   cursor: pointer;
+}
+
+#volume {
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -90,6 +94,6 @@ button {
   }
   
   #select-label {
-    font-size: 10px;
+    font-size: 14px;
   }
 }

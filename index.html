@@ -16,13 +16,18 @@
         <div class="name-container">
             <h1 class="song-name">Song name goes here</h1>
         </div>
-        <div class="controller flex">
-            <button class="back"><i class="fa-solid fa-backward-step"></i></button>
-            <label for="play-pause" id="play-pause-label"><i class="fa-solid fa-circle-play"></i></label>
-            <input type="checkbox" id="play-pause"> 
-            <button class="forward"><i class="fa-solid fa-forward-step"></i></button>
+        <div class="controller-container">
             <label for="select" id="select-label">Select Song</label>
             <input type="file" name="select" id="select">
+            
+            <div class="controller flex">
+                <button class="back"><i class="fa-solid fa-backward-step"></i></button>
+                <label for="play-pause" id="play-pause-label"><i class="fa-solid fa-circle-play"></i></label>
+                <input type="checkbox" id="play-pause"> 
+                <button class="forward"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+                
+                <input type="range" min="0" max="100" value="50" id="volume">
         </div>
     </main>
 </body>

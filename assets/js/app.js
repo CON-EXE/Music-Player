@@ -6,12 +6,14 @@ const prev = document.querySelector('.back');
 const next = document.querySelector('.forward');
 const songInput = document.getElementById('select')
 const nameDisplay = document.querySelector('.song-name');
+const volumeControl = document.getElementById('volume');
 
 let currentSong = null;
 let audioPlayer = null;
 const songList = [];
 let songLength = 0;
 let songName = "";
+let volume = .5;
 
 songInput.addEventListener('change', (event) => {
     currentSong = event.target.files[0];
@@ -22,10 +24,18 @@ songInput.addEventListener('change', (event) => {
         
         const fileUrl = URL.createObjectURL(currentSong);
         audioPlayer = new Audio(fileUrl);
+        audioPlayer.volume = volumeControl.value / 100;
 
         nameDisplay.innerText = currentSong.name;
     }
 });
+
+volumeControl.oninput = function() {
+    if (currentSong) {
+        audioPlayer.volume = volumeControl.value / 100;
+        console.log(audioPlayer.volume);
+    }
+}
 
 function nextSong() {
 
