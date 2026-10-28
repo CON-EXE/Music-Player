@@ -76,7 +76,7 @@ button {
 }
 
 #volume {
-
+  accent-color: #cc0000;
 }
 
 @media only screen and (max-width: 600px) {
