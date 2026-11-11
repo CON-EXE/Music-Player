@@ -46,6 +46,11 @@ main {
   padding-inline: 25px;
 }
 
+.controller {
+  width: 100%;
+  justify-content: center;
+}
+
 button {
     color: #fff;
     font-size: 50px;
@@ -62,6 +67,10 @@ button {
 #play-pause-label {
   font-size: 60px;
   cursor: pointer;
+}
+
+#progress {
+  width: 30vw;
 }
 
 #select {
