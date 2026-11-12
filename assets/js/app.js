@@ -14,6 +14,9 @@ let currentSong = null;
 const songList = [];
 let songName = "";
 
+// Without this the ontimeupdate will go to war with the onchange and thats just a pain
+let progressClick = false;
+
 songInput.addEventListener('change', (event) => {
     currentSong = event.target.files[0];
 
@@ -22,11 +25,29 @@ songInput.addEventListener('change', (event) => {
         audio.src = fileUrl;
         audio.volume = volumeControl.value / 100;
         nameDisplay.innerText = currentSong.name;
+        progress.value = 0;
     }
 });
 
 audio.ontimeupdate = function() {
-    progress.value = (audio.currentTime / audio.duration) * 100;
+    if (!progressClick) {
+        progress.value = (audio.currentTime / audio.duration) * 100;
+    }
+}
+
+progress.addEventListener('pointerdown', () => {
+    progressClick = true;
+});
+
+progress.addEventListener('pointerup', () => {
+    progressClick = false;
+});
+
+progress.onchange = function() {
+    if (currentSong) {
+        audio.currentTime = (progress.value / 100) * audio.duration;
+    }
+    progressClick = false;
 }
 
 volumeControl.oninput = function() {
