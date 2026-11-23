@@ -9,6 +9,8 @@ const songInput = document.getElementById('select')
 const nameDisplay = document.querySelector('.song-name');
 const volumeControl = document.getElementById('volume');
 const progress = document.getElementById('progress');
+const currentDisplay = document.querySelector('.current');
+const durationDisplay = document.querySelector('.duration');
 
 let currentSong = null;
 const songList = [];
@@ -26,12 +28,18 @@ songInput.addEventListener('change', (event) => {
         audio.volume = volumeControl.value / 100;
         nameDisplay.innerText = currentSong.name;
         progress.value = 0;
+
+        audio.addEventListener('loadedmetadata', () => {
+            durationDisplay.innerHTML = formatTime(audio.duration);
+        });
+
     }
 });
 
 audio.ontimeupdate = function() {
     if (!progressClick) {
         progress.value = (audio.currentTime / audio.duration) * 100;
+        currentDisplay.innerHTML = formatTime(audio.currentTime);
     }
 }
 
@@ -66,4 +74,10 @@ playPause.onclick = function() {
             audio.play();
         }
     }
+}
+
+function formatTime(num) {
+    let minutes = String(Math.floor(num / 60).toFixed(0));
+    let seconds = String(Math.floor(num % 60).toFixed(0)).padStart(2, '0');
+    return `${minutes}:${seconds}`;
 }

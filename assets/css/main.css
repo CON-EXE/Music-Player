@@ -69,8 +69,26 @@ button {
   cursor: pointer;
 }
 
+.progress-container {
+  display: flex;
+
+  p {
+    display: inline-block;
+    min-width: 49px;
+  }
+
+  .current {
+    text-align: left;
+  }
+
+  .duration {
+    text-align: right;
+  }
+}
+
 #progress {
   width: 30vw;
+  margin-inline: 10px;
 }
 
 #select {
